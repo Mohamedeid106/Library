@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./icons/library.svg" type="image/x-svg">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <dialog>
+        <form method="dialog" id="book-form">
+            <h2>Add New Book</h2>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="pages">Pages:</label>
+            <input type="number" id="pages" name="pages" required>
+
+            <label for="read-status">Read Status:</label>
+            <select id="read-status" name="read-status" required>
+                <option value="read">Read</option>
+                <option value="not-read">Not Read</option>
+            </select>
+
+            <div class="form-buttons">
+                <button type="submit" id="add-book-btn">Add Book</button>
+                <button type="button" id="cancel-btn">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div class="page-title">
+                <img src="./icons/library.svg" alt="Dashboard">
+                <p>Library</p>
+            </div>
+
+            <div class="main-options">
+                <ul class="options">
+                    <li><img src="./icons/home-heart.svg" alt="Home">Home</li>
+                    <li><img src="./icons/card-account-details-outline.svg" alt="Profile">Profile</li>
+                    <li><img src="./icons/message-reply.svg" alt="Messages">Messages</li>
+                    <li><img src="./icons/clock-time-eight.svg" alt="History">History</li>
+                    <li><img src="./icons/file-multiple.svg" alt="Tasks">Tasks</li>
+                    <li><img src="./icons/star-plus-outline.svg" alt="Communities">Communities</li>
+                </ul>
+            </div>
+
+            <div class="settings">
+                <ul class="options">
+                    <li><img src="./icons/cog.svg" alt="Settings">Settings</li>
+                    <li><img src="./icons/help-box.svg" alt="Support">Support</li>
+                    <li><img src="./icons/shield-check.svg" alt="Privacy">Privacy</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="header__search">
+                <svg class="search-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>search</title>
+                    <path
+                        d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                </svg>
+
+                <input type="search" placeholder="Search..." autocomplete="address-level1" />
+            </div>
+
+            <div class="header__profile">
+                <svg class="add_book svg-header" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>add book</title>
+                    <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                </svg>
+
+                <svg class="svg-header" id="theme-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>toggle theme</title>
+                    <path
+                        d="M7.5,2C5.71,3.15 4.5,5.18 4.5,7.5C4.5,9.82 5.71,11.85 7.53,13C4.46,13 2,10.54 2,7.5A5.5,5.5 0 0,1 7.5,2M19.07,3.5L20.5,4.93L4.93,20.5L3.5,19.07L19.07,3.5M12.89,5.93L11.41,5L9.97,6L10.39,4.3L9,3.24L10.75,3.12L11.33,1.47L12,3.1L13.73,3.13L12.38,4.26L12.89,5.93M9.59,9.54L8.43,8.81L7.31,9.59L7.65,8.27L6.56,7.44L7.92,7.35L8.37,6.06L8.88,7.33L10.24,7.36L9.19,8.23L9.59,9.54M19,13.5A5.5,5.5 0 0,1 13.5,19C12.28,19 11.15,18.6 10.24,17.93L17.93,10.24C18.6,11.15 19,12.28 19,13.5M14.6,20.08L17.37,18.93L17.13,22.28L14.6,20.08M18.93,17.38L20.08,14.61L22.28,17.15L18.93,17.38M20.08,12.42L18.94,9.64L22.28,9.88L20.08,12.42M9.63,18.93L12.4,20.08L9.87,22.27L9.63,18.93Z" />
+                </svg>
+
+                <svg class="svg-header" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>notification</title>
+                    <path
+                        d="M10,21H14A2,2 0 0,1 12,23A2,2 0 0,1 10,21M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M17,11A5,5 0 0,0 12,6A5,5 0 0,0 7,11V18H17V11M19.75,3.19L18.33,4.61C20.04,6.3 21,8.6 21,11H23C23,8.07 21.84,5.25 19.75,3.19M1,11H3C3,8.6 3.96,6.3 5.67,4.61L4.25,3.19C2.16,5.25 1,8.07 1,11Z" />
+                </svg>
+
+                <div class="profile-image-wrapper">
+                    <img class="profile-image" src="./icons/account.svg" alt="" />
+                </div>
+
+                <span>Library</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <h1>Books</h1>
+            <div class="books"></div>
+        </div>
+    </div>
+</body>
+</html>
